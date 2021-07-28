@@ -1,4 +1,5 @@
 pipeline {
+    agent any
     node("mypod") {
         stages {
             stage('Compile') {
