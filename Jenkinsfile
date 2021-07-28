@@ -1,7 +1,7 @@
 node("maven") { 
     stage('Compile') {
-        sh 'pwd'
-        sh 'ls -la'
+        sh 'git clone https://github.com/FlorinPeter/testing-examples.git'
+        sh 'cd testing-examples'
         sh 'mvn clean package -DskipTests=true'
     }
     stage('Unit Tests') {
@@ -13,7 +13,7 @@ node("maven") {
     
     post {
         always {
-            junit 'target/surefire-reports/TEST-*.xml'
+            junit 'testing-examples/target/surefire-reports/TEST-*.xml'
         }
     }
 }
