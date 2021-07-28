@@ -241,7 +241,7 @@
                 <version>2.18.1</version>
                 <configuration>
                 <excludes>
-                    <exclude>com.pik.contact.gui.selenium.test.ContactsTest.java</exclude>
+                    <!--exclude>com.pik.contact.gui.selenium.test.ContactsTest.java</exclude-->
                     <exclude>com.pik.contact.cucumber.RunCukesTest.java</exclude>
                     <exclude>com.pik.contact.service.integration.ContactServiceTest.java</exclude>
                 </excludes>
