@@ -1,5 +1,7 @@
 node("maven") { 
     stage('Compile') {
+        sh 'pwd'
+        sh 'ls -la'
         sh 'mvn clean package -DskipTests=true'
     }
     stage('Unit Tests') {
