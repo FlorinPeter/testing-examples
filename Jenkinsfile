@@ -1,25 +1,18 @@
-pipeline {
-    agent any
+node("mypod") {
     stages {
         stage('Compile') {
-            node("mypod") {
-                steps {
-                    sh 'mvn clean package -DskipTests=true'
-                }
+            steps {
+                sh 'mvn clean package -DskipTests=true'
             }
         }
         stage('Unit Tests') {
-            node("mypod") {
-                steps {
-                    sh 'mvn surefire:test'
-                }
+            steps {
+                sh 'mvn surefire:test'
             }
         }
          stage('Integration Tests') {
-            node("mypod") {
-                steps {
-                    sh 'mvn failsafe:integration-test'
-                }
+            steps {
+                sh 'mvn failsafe:integration-test'
             }
         }
     }
